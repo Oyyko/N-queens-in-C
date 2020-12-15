@@ -1,5 +1,6 @@
 # N-queens-in-C
 Solving N queens problem with the C programming language
+-- with high speed
 
 **⚠️️ Warning: I use some Heuristics Algorithm in this code to get a better performance when N is very large. However these Algorithm may cause a worse performance when N is small.  So DON'T try small number.**
 
