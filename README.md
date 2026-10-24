@@ -30,13 +30,15 @@ O(1) per update.
 
 The solver runs a swap-based local search in the style of Sosič and Gu:
 
-1. Start from a random permutation.
+1. Build a good starting permutation: place queens row by row on randomly
+   chosen columns that are free of diagonal conflicts (up to 4N attempts),
+   then shuffle the remaining rows. Most queens start conflict-free.
 2. Repeatedly pick a queen that is under attack and a random second queen,
    and swap their columns if that lowers the total number of collisions.
 3. Keep a list of attacked queens and rebuild it only when the collision count
    drops below half of its value at the last rebuild, instead of after every
    swap.
-4. Restart from a new random permutation when the search stops making
+4. Restart from a new starting permutation when the search stops making
    progress.
 
 The heuristics are tuned for large N; for small boards a plain backtracking
